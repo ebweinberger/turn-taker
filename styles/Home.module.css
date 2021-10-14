@@ -119,3 +119,15 @@
     flex-direction: column;
   }
 }
+
+.switchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.person {
+  text-align: center;
+  width: 500px;
+  padding: 20px;
+}
