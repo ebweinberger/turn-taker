@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import Switch from "react-switch";
 import { Typography } from "@mui/material";
-import useWindowSize from "./hooks/useWindowSize";
+import useWindowSize from "../hooks/useWindowSize";
 
 const MySwitch = (props) => {
   const [checked, setChecked] = useState(false);
