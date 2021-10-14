@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <MySwitch name={"Dinner"} />
-      <MySwitch name={"TV"} />
+      <MySwitch name={"Television"} />
       <MySwitch name={"Game"} />
     </div>
   );
