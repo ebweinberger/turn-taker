@@ -6,7 +6,8 @@ export default function Home() {
     <div>
       <MySwitch name={"Dinner"} />
       <MySwitch name={"Television"} />
-      <MySwitch name={"Game"} />
+      <MySwitch name={"Pay"} />
+      <MySwitch name={"Miscellaneous"} />
     </div>
   );
 }
