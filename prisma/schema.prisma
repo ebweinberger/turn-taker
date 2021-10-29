@@ -1,0 +1,17 @@
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  refernetialIntegrity = "prisma"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+model Switches {
+  id       Int    @id @default(autoincrement())
+  name     String @db.VarChar(255)
+  position Int    @db.TinyInt
+}
