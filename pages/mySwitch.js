@@ -7,17 +7,10 @@ import axios from "axios"
 const MySwitch = (props) => {
   const [checked, setChecked] = useState(false);
   const [thisSwitch, setThisSwitch] = useState({})
-  const handleChange = () => {
-    setChecked(!checked);
-    axios.post('http://localhost:3000/api/setSwitch', {
-      switchId: thisSwitch.id,
-      position: checked ? 0 : 1
-    })
-      .catch(e => console.error('ERROR POSTING: ', e))
-  };
+
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/getSwitches')
+    axios.get(process.env.NEXT_PUBLIC_GET_URL)
       .then(res => {
         setThisSwitch(res.data.filter(function (data) { return data.name === props.name })[0])
       })
@@ -31,6 +24,15 @@ const MySwitch = (props) => {
       setChecked(true)
     }
   }, [thisSwitch])
+
+  const handleChange = () => {
+    setChecked(!checked);
+    axios.post(process.env.NEXT_PUBLIC_SET_URL, {
+      switchId: thisSwitch.id,
+      position: checked ? 0 : 1
+    })
+      .catch(e => console.error('ERROR POSTING: ', e))
+  };
 
   return (
     <div>
